@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1 id="page title">Your Dream Diary</h1>
-        <h2 id="page sub-heading">Dreams you have had</h2>
+        <h2 id="dreams title">Dreams you have had</h2>
         <h3 id="dream title">Walls in house made of sponge cake!</h3>
         <h4 id="dream or nightmare">Dream/Nightmare</h4>
         <h4>01/01/1970</h4>
