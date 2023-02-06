@@ -5,7 +5,7 @@
 <HTML>
     <head>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" type="text/css" href="/styles/styles.css" >
+        <link rel="stylesheet" type="text/css" href="styles/styles.css" >
     </head>
     <body>
         <h1 id="page title">Your Dream Diary</h1>
