@@ -1,9 +1,9 @@
 <?php
 require 'src/functions.php';
 
-use PHPunit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
-class functions extends TestCase
+class Functions extends TestCase
 {
     public function testDisplayDreamDetails ()
     {
