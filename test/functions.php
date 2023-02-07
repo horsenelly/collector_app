@@ -33,4 +33,17 @@ class Functions extends TestCase
         $actualOutput = displayDreamDetails($array);
         $this->assertEquals($expectedOutput,$actualOutput);
     }
+
+public function testFailureIncorrectArrayKeys() 
+    {
+        $array = 
+        [
+            ['jacket_potato'=>'yummy'], 
+            ['lasagne'=>'yummier']
+        ];
+    
+        $this->expectException(Exception::class);
+        displayDreamDetails($array);
+        
+    }
 }
