@@ -2,7 +2,7 @@
 
 function displayDreamDetails(array $dreams): string{
     $dreamOutput ='';
-    foreach($dreams as $dream){
+    foreach(array_reverse($dreams) as $dream){
         $dreamOutput .="<h3>" . $dream['dream_title'] . "</h3>"
         . "<h4>" . $dream['dream_or_nightmare'] . "</h4>"
         . "<h4>" . $dream['dream_date'] . "</h4>"
