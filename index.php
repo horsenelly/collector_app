@@ -1,8 +1,8 @@
 <?php
 require 'src/functions.php';
+require 'src/db.php';
 
-$dbString = 'dreams';
-$db = connectToDB($dbString);
+$db = connectToDB('dreams');
 $dreams = getAllDreams($db);
 $displayedDreams = displayDreamDetails($dreams);
 
