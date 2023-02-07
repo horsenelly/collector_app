@@ -22,3 +22,4 @@ function displayDreamDetails(array $dreams): string{
     }
     return $dreamOutput;    
 }
+

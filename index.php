@@ -16,6 +16,9 @@ $displayedDreams = displayDreamDetails($dreams);
     <title>Dream Collection</title>
 </head>
 <body>
+    <nav>
+        <a href=newDream.php>Add new dream</a>
+    </nav>
     <main>
         <h1>Your Dream Diary</h1>
         <h2>Your dreams</h2>

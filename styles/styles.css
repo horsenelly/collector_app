@@ -2,16 +2,27 @@
 
 * {
     font-family: 'Cormorant Garamond', serif;
+    text-decoration: none;
 }
+
+form * {
+    display:block;
+    padding-left: 25%
+}
+
+a:visited{
+    color:black;
+}
+
 h1 {
     font-size: 4.5rem;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, a {
     padding-left: 25%;
 }
 
-h2 {
+h2, a {
     font-size: 3rem;
 }
 h3 {
@@ -27,8 +38,12 @@ p {
     max-width: 50%;
 }
 
+textarea {
+    width: 300px
+    height:150px
+}
 @media screen and (max-width:800px) {
-    h1, h2, h3, h4, p {
+    h1, h2, h3, h4, p, a {
         padding-left: 5%;
     }
     p {
