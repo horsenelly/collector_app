@@ -4,8 +4,36 @@
     font-family: 'Cormorant Garamond', serif;
 }
 h1 {
-    text-align: center;
-    font-size: 3rem;
+    font-size: 4.5rem;
 }
 
+h1, h2, h3, h4, p {
+    padding-left: 25%;
+}
+
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 2rem;
+    max-width: 50%;
+}
+
+@media screen and (max-width:800px) {
+    h1, h2, h3, h4, p {
+        padding-left: 5%;
+    }
+    p {
+        max-width: 100%;
+        padding-right: 5%;
+    }
+}
 
