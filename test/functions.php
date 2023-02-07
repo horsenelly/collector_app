@@ -22,15 +22,15 @@ class Functions extends TestCase
                 'dream_date'=>'1990-01-01'
             ]
         ];
-        $expecteOutput = "<h3>Finding nemo</h3>
-        <h4>Nightmare</h4>
-        <h4>2023-01-01</h4>
-        <p>I was nemo, and no-one could find me!</p>".
-        "<h3>Forrest Gump</h3>
-        <h4>Dream</h4>
-        <h4>1990-01-01</h4>
-        <p>I just kept on running...</p>";
+        $expectedOutput = "<h3>Finding nemo</h3>"
+        . "<h4>Nightmare</h4>"
+        . "<h4>2023-01-01</h4>"
+        . "<p>I was nemo, and no-one could find me!</p>"
+        . "<h3>Forrest Gump</h3>"
+        . "<h4>Dream</h4>"
+        . "<h4>1990-01-01</h4>"
+        . "<p>I just kept on running...</p>";
         $actualOutput = displayDreamDetails($array);
-        $this->assertEquals($expecteOutput,$actualOutput);
+        $this->assertEquals($expectedOutput,$actualOutput);
     }
 }
