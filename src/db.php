@@ -10,6 +10,6 @@ function connectToDB(string $dbName): PDO {
 function getAllDreams(PDO $db): array {
     $query = $db->prepare('SELECT * FROM dreams;');
     $query->execute();
-    $dreams =  $query->fetchALL();
+    $dreams =  $query->fetchAll();
     return $dreams;
 }
