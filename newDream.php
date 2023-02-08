@@ -16,19 +16,18 @@ if(isset($_POST['dream_title'])
             'dream_description'=>$_POST['dream_description'],
             'dream_date'=>$_POST['dream_date'],
         ];
-        print_r($newDream);
         $db = connectToDB('dreams');
         $postMessage = addItemToDb($db, $newDream);
-}   else {
-        $postMessage = "<p>Your dream has not added properly!</p>";
-    }?>
+        header('Location: dreamSuccessMessage.php');
+}
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <title>Dream Collection</title>
+    <title>Add New Dream</title>
 </head>
 <body>
     <main>
@@ -68,7 +67,6 @@ if(isset($_POST['dream_title'])
                 </div> 
             </form>
         </div> 
-        <?php echo $postMessage ?>
     </main>
 </body>
 <html>

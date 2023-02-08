@@ -20,7 +20,12 @@ function addItemToDb(PDO $db, array $dreamDetails): string {
     $dream_description = $dreamDetails['dream_description'];
     $dream_date = $dreamDetails['dream_date'];
     $query = $db->prepare("INSERT INTO dreams (dream_title, dream_or_nightmare, dream_description, dream_date) 
-    VALUES ('$dream_title', '$dream_or_nightmare', '$dream_description', '$dream_date')");
-    $query->execute();
+    VALUES (:dream_title, :dream_or_nightmare, :dream_description, :dream_date)");
+    $query->execute([
+        'dream_title' => $dream_title, 
+        'dream_or_nightmare' => $dream_or_nightmare, 
+        'dream_description' => $dream_description, 
+        'dream_date' => $dream_date
+    ]);
     return "<p<Your dreams have been added to the database! Please return to your dreams to see it in your collection.</p>";
 }
