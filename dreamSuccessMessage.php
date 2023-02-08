@@ -1,4 +1,5 @@
 <?php
+require 'newDream.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
         <a href="index.php">Return to dreams</a>
     </nav>
     <main>
-        <h1>Your dream was added succesfully!</h1>
+        <?php echo $dreamSuccessMessage ?>
     </main>
 </body>
 </html>
