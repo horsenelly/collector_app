@@ -10,7 +10,7 @@ h1 {
     font-size: 4.5rem;
 }
 
-h1, h2, h3,  p, a {
+h1, h2, h3,  p, a, div {
     margin: 0 auto;
     max-width: 800px;
     padding: 15px;
@@ -24,7 +24,7 @@ h3 {
     font-size: 2.5rem;
 }
 
-p, a {
+p, a, input, label, textarea {
     font-size: 2rem;
 }
 
@@ -35,4 +35,10 @@ a {
 
 a:visited {
     color: black;
+}
+
+textarea {
+    width: 800px;
+    height:200px;
+    
 }

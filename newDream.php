@@ -2,6 +2,9 @@
 $postMessage = '';
 $newDream = [];
 
+require 'src/functions.php';
+require 'src/db.php';
+
 if(isset($_POST['dream_title']) 
     && isset($_POST['dream_or_nightmare']) 
     && isset($_POST['dream_description']) 
@@ -13,12 +16,12 @@ if(isset($_POST['dream_title'])
             'dream_description'=>$_POST['dream_description'],
             'dream_date'=>$_POST['dream_date'],
         ];
-        addItemsToDb($newDream);
-        $postMessage = "success!";
+        print_r($newDream);
+        $db = connectToDB('dreams');
+        $postMessage = addItemToDb($db, $newDream);
 }   else {
-        $postMessage = "This didnt work!";
-    }
-?>
+        $postMessage = "<p>Your dream has not added properly!</p>";
+    }?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,19 +38,34 @@ if(isset($_POST['dream_title'])
         <h1>Add new Dream</h1>
         <div id="newDreamContainer">
             <form method="post">
-                <label for="dream_title" >Dream Title</label>
-                <input type="text" id="dream_title" name="dream_title">
-                <label for="dream">Dream</label>
-                <input type="radio" name="dream_or_nightmare" value="Dream" id="dream">
-                <label for="nightmare">Nightmare</label>
-                <input type="radio" name="dream_or_nightmare" value="Nightmare" id="nightmare">
-                <label for="dream/nightmare">Dream/Nightmare</label>
-                <input type="radio" name="dream_or_nightmare" value="Dream/Nightmare" id="dream/nightmare">
-                <label>Dream Description</label>
-                <input type="textarea" name="dream_description">
-                <label>Date of dream</label>
-                <input type="date" name="dream_date">
-                <input type="submit" value="Submit">
+                <div>
+                    <label for="dream_title" >Dream Title</label>
+                    <input type="text" id="dream_title" name="dream_title">
+                </div>
+                <p>Select dream type:  </p>
+                <div>
+                    <label for="dream">Dream</label>
+                    <input type="radio" name="dream_or_nightmare" value="Dream" id="dream">
+                </div>
+                <div>
+                    <label for="nightmare">Nightmare</label>
+                    <input type="radio" name="dream_or_nightmare" value="Nightmare" id="nightmare">
+                </div>
+                <div>
+                    <label for="dream/nightmare">Dream/Nightmare</label>
+                    <input type="radio" name="dream_or_nightmare" value="Dream/Nightmare" id="dream/nightmare">
+                </div>
+                <div>
+                    <label for="dream_description">Dream Description (1000 characters max): </label>
+                    <textarea name="dream_description" id="dream_description"></textarea>
+                </div>
+                <div>
+                    <label for="dream_date">Date of dream: </label>
+                    <input type="date" name="dream_date" id="dream_date">
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div> 
             </form>
         </div> 
         <?php echo $postMessage ?>
