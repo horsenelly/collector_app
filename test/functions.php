@@ -43,4 +43,14 @@ public function testFailureIncorrectArrayKeys()
         $this->expectException(Exception::class);
         displayDreamDetails($array);
     }
+public function testFailureCheckDreamData () {
+
+        $array = [
+            ['jacket_potato'=>'yummy'], 
+            ['lasagne'=>'yummier']
+        ];
+        $this->expectException(Exception::class);
+        checkDreamData($array);
 }
+}
+

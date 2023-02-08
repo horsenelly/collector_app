@@ -1,6 +1,3 @@
-<?php
-require 'newDream.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +10,7 @@ require 'newDream.php';
         <a href="index.php">Return to dreams</a>
     </nav>
     <main>
-        <?php echo $dreamSuccessMessage ?>
+        <p>Success! The dream is now in your collection!</p>
     </main>
 </body>
 </html>
