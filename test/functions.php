@@ -36,7 +36,8 @@ class Functions extends TestCase
 
 public function testFailureIncorrectArrayKeys() 
     {
-        $array = [
+        $array = 
+        [
             ['jacket_potato'=>'yummy'], 
             ['lasagne'=>'yummier']
         ];
