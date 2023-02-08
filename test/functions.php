@@ -23,12 +23,12 @@ class Functions extends TestCase
             ]
         ];
         $expectedOutput = "<h3>Forrest Gump</h3>"
-        . "<h4>Dream</h4>"
-        . "<h4>1990-01-01</h4>"
+        . "<p>Dream</p>"
+        . "<p>1990-01-01</p>"
         . "<p>I just kept on running...</p>"
         . "<h3>Finding nemo</h3>"
-        . "<h4>Nightmare</h4>"
-        . "<h4>2023-01-01</h4>"
+        . "<p>Nightmare</p>"
+        . "<p>2023-01-01</p>"
         . "<p>I was nemo, and no-one could find me!</p>";
         $actualOutput = displayDreamDetails($array);
         $this->assertEquals($expectedOutput,$actualOutput);
@@ -36,14 +36,11 @@ class Functions extends TestCase
 
 public function testFailureIncorrectArrayKeys() 
     {
-        $array = 
-        [
+        $array = [
             ['jacket_potato'=>'yummy'], 
             ['lasagne'=>'yummier']
         ];
-    
         $this->expectException(Exception::class);
         displayDreamDetails($array);
-        
     }
 }
