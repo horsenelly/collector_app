@@ -3,13 +3,14 @@
 html {
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 h1 {
     font-size: 4.5rem;
 }
 
-h1, h2, h3,  p {
+h1, h2, h3,  p, a {
     margin: 0 auto;
     max-width: 800px;
     padding: 15px;
@@ -23,6 +24,15 @@ h3 {
     font-size: 2.5rem;
 }
 
-p {
+p, a {
     font-size: 2rem;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }

@@ -17,6 +17,7 @@ $displayedDreams = displayDreamDetails($dreams);
 </head>
 <body>
     <main>
+        <a href="newDream.php">Add new dream</a>
         <h1>Your Dream Diary</h1>
         <h2>Your dreams</h2>
         <?php echo $displayedDreams; ?>
