@@ -7,8 +7,7 @@ class Functions extends TestCase
 {
     public function testDisplayDreamDetails ()
     {
-        $array = 
-        [
+        $array = [
             [
                 'dream_title'=>'Finding nemo',
                 'dream_or_nightmare'=>'Nightmare',
@@ -36,8 +35,7 @@ class Functions extends TestCase
 
 public function testFailureIncorrectArrayKeys() 
     {
-        $array = 
-        [
+        $array = [
             ['jacket_potato'=>'yummy'], 
             ['lasagne'=>'yummier']
         ];
