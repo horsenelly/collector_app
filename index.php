@@ -22,4 +22,4 @@ $displayedDreams = displayDreamDetails($dreams);
         <?php echo $displayedDreams; ?>
     </main>
 </body>
-</HTML>
+</html>

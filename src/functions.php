@@ -2,8 +2,8 @@
 
 function displayDreamDetails(array $dreams): string {
     $dreamOutput ='';
-    $dreamsChronologically = array_reverse($dreams);
-    foreach($dreamsChronologically as $dream) {
+    $dreamsReversedChronologically = array_reverse($dreams);
+    foreach($dreamsReversedChronologically as $dream) {
 
         if(array_key_exists('dream_title', $dream) 
         && array_key_exists('dream_or_nightmare', $dream) 
