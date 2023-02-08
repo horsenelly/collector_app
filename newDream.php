@@ -17,7 +17,7 @@ if(isset($_POST['dream_title'])
             'dream_date'=>$_POST['dream_date'],
         ];
         $db = connectToDB('dreams');
-        $postMessage = addItemToDb($db, $newDream);
+        addItemToDb($db, $newDream);
         header('Location: dreamSuccessMessage.php');
 }
     ?>
