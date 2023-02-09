@@ -10,10 +10,14 @@ h1 {
     font-size: 4.5rem;
 }
 
-h1, h2, h3,  p, a, div {
+h1, h2, h3,  p, a, div, label {
     margin: 0 auto;
     max-width: 800px;
     padding: 15px;
+}
+
+label{
+    padding: 0px;
 }
 
 h2 {
@@ -46,4 +50,9 @@ textarea {
     width: 800px;
     height:200px;
     
+}
+
+.box-div {
+    border:solid black 1px;
+    margin-bottom: 10px;
 }

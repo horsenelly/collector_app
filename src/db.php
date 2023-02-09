@@ -29,3 +29,11 @@ function addItemToDb(PDO $db, array $dreamDetails): string {
     ]);
     return "<p<Your dreams have been added to the database! Please return to your dreams to see it in your collection.</p>";
 }
+
+
+function deleteItemFromDb(PDO $db, array $dreams): bool {
+    $dreamIdsArray = array_keys($dreams);
+    $query = $db->prepare"(DELETE FROM dreams WHERE name)
+
+    
+}

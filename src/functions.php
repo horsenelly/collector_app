@@ -32,10 +32,13 @@ function displayDreamsForDelete(array $dreams): string {
         && array_key_exists('dream_date', $dream) 
         && array_key_exists('dream_description', $dream)) {
 
-            $dreamOutput .="<h3>" . $dream['dream_title'] . "</h3>"
+            $dreamOutput .="<div class=\"box-div\">"
+            . "<h3>" . $dream['dream_title'] . "</h3>"
             . "<p>" . $dream['dream_date'] . "</p>"
-            . "<label for=\"" . $dream['id'] . ">Tick this box to delete this dream!</label>"
-            . "<input type=\"checkbox\" id=\"" . $dream['id'] . "\">";
+            . "<div>"
+            . "<label for=\"" . $dream['id'] . "\">Delete?</label>"
+            . "<input type=\"checkbox\" id=\"" . $dream['id'] . "\" name=\"" . $dream['id'] . "\">"
+            . "</div></div>";
 
         } else {
             throw new Exception('Invalid array keys');
@@ -43,3 +46,4 @@ function displayDreamsForDelete(array $dreams): string {
     }
     return $dreamOutput;    
 }
+

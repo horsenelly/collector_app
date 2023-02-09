@@ -18,7 +18,7 @@ if (
     ];
     $db = connectToDB('dreams');
     addItemToDb($db, $newDream);
-    header('Location: dreamSuccessMessage.php');
+    header('Location: addDreamSuccessMessage.php');
 }
 ?>
 
