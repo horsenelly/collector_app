@@ -20,11 +20,7 @@ label{
     padding: 0px;
 }
 
-h2 {
-    font-size: 3rem;
-}
-
-h3 {
+h2, h3 {
     font-size: 2.5rem;
 }
 
@@ -32,7 +28,7 @@ p, a, input, label, textarea, legend {
     font-size: 2rem;
 }
 
-a {
+a, a:visited {
     display: block;
     text-decoration: none;
     color: black;
@@ -40,10 +36,6 @@ a {
 
 fieldset {
     border: none;
-}
-
-a:visited {
-    color: black;
 }
 
 textarea {

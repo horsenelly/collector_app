@@ -37,22 +37,28 @@ if (
             <a href="index.php">Return to dreams</a>
         </nav>
         <h1>Add new Dream</h1>
+
         <div id="newDreamContainer">
             <form method="post">
-                <div>
+
+               <div>
                     <label for="dream_title">Dream Title</label>
                     <input type="text" id="dream_title" name="dream_title">
                 </div>
+
                 <fieldset>
                     <legend>Select dream type: </legend>
+
                     <div>
                         <label for="dream">Dream</label>
                         <input type="radio" name="dream_or_nightmare" value="Dream" id="dream">
                     </div>
+
                     <div>
                         <label for="nightmare">Nightmare</label>
                         <input type="radio" name="dream_or_nightmare" value="Nightmare" id="nightmare">
                     </div>
+
                     <div>
                         <label for="dream/nightmare">Dream/Nightmare</label>
                         <input type="radio" name="dream_or_nightmare" value="Dream/Nightmare" id="dream/nightmare">
@@ -63,10 +69,12 @@ if (
                     <label for="dream_description">Dream Description (1000 characters max): </label>
                     <textarea name="dream_description" id="dream_description"></textarea>
                 </div>
+
                 <div>
                     <label for="dream_date">Date of dream: </label>
                     <input type="date" name="dream_date" id="dream_date">
                 </div>
+                
                 <div>
                     <input type="submit" value="Submit">
                 </div>
