@@ -4,7 +4,11 @@ require 'src/db.php';
 
 $db = connectToDB('dreams');
 $dreams = getAllDreams($db);
-$displayedDreams = displayDreamDetails($dreams);
+try {
+    $displayedDreams = displayDreamDetails($dreams);
+} catch (Exception $exception) {
+    error_log($exception->getMessage(), 3, 'serverlog.log');
+}
 
 ?>
 

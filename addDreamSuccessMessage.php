@@ -8,6 +8,7 @@
 <body>
     <nav>
         <a href="index.php">Return to dreams</a>
+        <a href="newDream.php">Add another dream</a>
     </nav>
     <main>
         <p>Success! The dream is now in your collection!</p>
