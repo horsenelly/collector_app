@@ -22,7 +22,7 @@ function displayDreamDetails(array $dreams): string {
     return $dreamOutput;    
 }
 
-function checkDreamData (array $newDream): bool {
+function validateDreamData (array $newDream): bool {
     
     $dreamTitle = $newDream['dream_title'];
     $dreamOrNightmare = $newDream['dream_or_nightmare'];
@@ -38,6 +38,7 @@ function checkDreamData (array $newDream): bool {
     && checkDate($dreamMonth, $dreamDay, $dreamYear)) {
         return true;
     } else {
+        throw new Exception ('Data is incorrect!');
         return false;
     }
 }

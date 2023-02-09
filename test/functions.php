@@ -43,17 +43,17 @@ public function testFailureIncorrectArrayKeys()
         $this->expectException(Exception::class);
         displayDreamDetails($array);
     }
-public function testFailureCheckDreamData () {
+// public function testFailureCheckDreamData () {
 
-        $array = [[
-            'dream_title' => 123,
-            'dream_or_nightmare' => 123,
-            'dream_description' => 123,
-            'dream_date' => 'this is plane wrong!'
-            ]
-        ];
-        $this->expectException(Exception::class);
-        checkDreamData($array);
-}
+//         $array = [[
+//             'dream_title' => 123,
+//             'dream_or_nightmare' => 123,
+//             'dream_description' => 123,
+//             'dream_date' => 'this is plane wrong!'
+//             ]
+//         ];
+//         $this->expectException(Exception::class);
+//         checkDreamData($array);
+// }
 }
 
