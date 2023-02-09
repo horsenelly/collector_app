@@ -4,24 +4,23 @@ require 'src/db.php';
 
 $db = connectToDB('dreams');
 $dreams = getAllDreams($db);
-$displayedDreams = displayDreamDetails($dreams);
-
-?>
-
+$displayedDreamsForDelete = displayDreamsForDelete($dreams);?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <title>Dream Collection</title>
+    <title>Remove a Dream</title>
 </head>
+
 <body>
     <main>
-        <a href="newDream.php">Add new dream</a>
-        <a href="removeDream.php">Remove a dream</a>
-        <h1>Your Dream Diary</h1>
-        <h2>Your dreams</h2>
-        <?php echo $displayedDreams; ?>
+        <nav>
+            <a href="index.php">Return to dreams</a>
+        </nav>
+        <h1>Remove a dream</h1>
+       <?php echo $displayedDreamsForDelete; ?>
     </main>
 </body>
-</html>
+<html>
