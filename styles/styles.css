@@ -3,16 +3,21 @@
 html {
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 h1 {
     font-size: 4.5rem;
 }
 
-h1, h2, h3,  p {
+h1, h2, h3,  p, a, div, label {
     margin: 0 auto;
     max-width: 800px;
     padding: 15px;
+}
+
+label{
+    padding: 0px;
 }
 
 h2 {
@@ -23,6 +28,31 @@ h3 {
     font-size: 2.5rem;
 }
 
-p {
+p, a, input, label, textarea, legend {
     font-size: 2rem;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+fieldset {
+    border: none;
+}
+
+a:visited {
+    color: black;
+}
+
+textarea {
+    width: 800px;
+    height:200px;
+    
+}
+
+.box-div {
+    border:solid black 1px;
+    margin-bottom: 10px;
 }

@@ -3,7 +3,7 @@ require 'src/functions.php';
 
 use PHPUnit\Framework\TestCase;
 
-class Functions extends TestCase
+class functions extends TestCase
 {
     public function testDisplayDreamDetails ()
     {
@@ -43,3 +43,4 @@ public function testFailureIncorrectArrayKeys()
         displayDreamDetails($array);
     }
 }
+

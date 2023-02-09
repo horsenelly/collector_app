@@ -4,7 +4,21 @@ require 'src/db.php';
 
 $db = connectToDB('dreams');
 $dreams = getAllDreams($db);
-$displayedDreams = displayDreamDetails($dreams);
+try {
+    $displayedDreams = displayDreamDetails($dreams);
+} catch (Exception $exception) {
+    error_log($exception->getMessage(), 3, 'serverlog.log');
+}
+
+try {
+    $badArray = [
+        ['jacket_potato'=>'yummy'], 
+        ['lasagne'=>'yummier']
+    ];
+    displayDreamDetails($badArray);
+} catch (Exception $exception) {
+    error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
+}
 
 ?>
 
@@ -17,6 +31,8 @@ $displayedDreams = displayDreamDetails($dreams);
 </head>
 <body>
     <main>
+        <a href="newDream.php">Add new dream</a>
+        <a href="removeDream.php">Remove a dream</a>
         <h1>Your Dream Diary</h1>
         <h2>Your dreams</h2>
         <?php echo $displayedDreams; ?>
