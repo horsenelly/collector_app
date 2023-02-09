@@ -24,13 +24,17 @@ h3 {
     font-size: 2.5rem;
 }
 
-p, a, input, label, textarea {
+p, a, input, label, textarea, legend {
     font-size: 2rem;
 }
 
 a {
     display: block;
     text-decoration: none;
+}
+
+fieldset {
+    border: none;
 }
 
 a:visited {

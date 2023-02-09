@@ -21,24 +21,3 @@ function displayDreamDetails(array $dreams): string {
     }
     return $dreamOutput;    
 }
-
-function validateDreamData (array $newDream): bool {
-    
-    $dreamTitle = $newDream['dream_title'];
-    $dreamOrNightmare = $newDream['dream_or_nightmare'];
-    $dreamDescription = $newDream['dream_description'];
-    $dreamDay = substr($newDream['dream_date'], -2);
-    $dreamMonth = substr($newDream['dream_date'], -5, 2);
-    $dreamYear = substr($newDream['dream_date'], -10, 4);
-    
-    if(
-    (is_string($dreamTitle) && strlen($dreamTitle) <= 255)
-    && (is_string($dreamOrNightmare) && strlen($dreamOrNightmare) <= 255)
-    && (is_string($dreamDescription) && strlen($dreamDescription) <= 1000)
-    && checkDate($dreamMonth, $dreamDay, $dreamYear)) {
-        return true;
-    } else {
-        throw new Exception ('Data is incorrect!');
-        return false;
-    }
-}
