@@ -8,11 +8,9 @@ $displayedDreamsForDelete = displayDreamsForDelete($dreams);
 
 if(!empty($_POST)) {
     $dreamsForDelete = $_POST;
-    print_r ($_POST);
-    foreach($dreamsForDelete as $dreamforDelete) {
-        echo "$dreamforDelete";
+    deleteItemFromDb($db, $dreamsForDelete);
+    header('Location: deleteSuccessMessage.php');
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

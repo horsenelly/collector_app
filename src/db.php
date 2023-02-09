@@ -4,6 +4,7 @@ function connectToDB(string $dbName): PDO {
     $connectionString ="mysql:host=db; dbname=$dbName";
     $db = new PDO($connectionString, 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $db;
 }
 
@@ -33,7 +34,10 @@ function addItemToDb(PDO $db, array $dreamDetails): string {
 
 function deleteItemFromDb(PDO $db, array $dreams): bool {
     $dreamIdsArray = array_keys($dreams);
-    $query = $db->prepare"(DELETE FROM dreams WHERE name)
-
-    
+    $numberOfQuestionMarks = sizeof($dreamIdsArray);
+    $questionMarksString = "?";
+    $questionMarksString .= str_repeat(", ?", $numberOfQuestionMarks-1);
+    $query = $db->prepare("DELETE FROM dreams WHERE id IN ($questionMarksString);");
+    $query->execute($dreamIdsArray);
+    return "<p>Your dreams have been removed from the database!</p>";
 }
