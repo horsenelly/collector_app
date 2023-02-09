@@ -30,7 +30,8 @@ function displayDreamsForDelete(array $dreams): string {
         if(array_key_exists('dream_title', $dream) 
         && array_key_exists('dream_or_nightmare', $dream) 
         && array_key_exists('dream_date', $dream) 
-        && array_key_exists('dream_description', $dream)) {
+        && array_key_exists('dream_description', $dream)
+        && array_key_exists('id', $dream)) {
 
             $dreamOutput .="<div class=\"box-div\">"
             . "<h3>" . $dream['dream_title'] . "</h3>"
