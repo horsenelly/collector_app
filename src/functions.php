@@ -16,7 +16,7 @@ function displayDreamDetails(array $dreams): string {
             . "<p>" . $dream['dream_description'] . "</p>";
 
         } else {
-            throw new Exception('<p>Invalid array keys</p>');
+            throw new Exception('Invalid array keys');
         }
     }
     return $dreamOutput;    

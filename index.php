@@ -17,7 +17,7 @@ try {
     ];
     displayDreamDetails($badArray);
 } catch (Exception $exception) {
-    error_log($exception->getMessage(), 3, 'serverlog.log');
+    error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
 }
 
 ?>
