@@ -16,27 +16,18 @@ function getAllDreams(PDO $db): array {
 }
 
 function addItemToDb(PDO $db, array $dreamDetails): string {
-    $dream_title = $dreamDetails['dream_title'];
-    $dream_or_nightmare = $dreamDetails['dream_or_nightmare'];
-    $dream_description = $dreamDetails['dream_description'];
-    $dream_date = $dreamDetails['dream_date'];
     $query = $db->prepare("INSERT INTO dreams (dream_title, dream_or_nightmare, dream_description, dream_date) 
     VALUES (:dream_title, :dream_or_nightmare, :dream_description, :dream_date)");
-    $query->execute([
-        'dream_title' => $dream_title, 
-        'dream_or_nightmare' => $dream_or_nightmare, 
-        'dream_description' => $dream_description, 
-        'dream_date' => $dream_date
-    ]);
+    $query->execute($dreamDetails);
     return "<p<Your dreams have been added to the database! Please return to your dreams to see it in your collection.</p>";
 }
 
 
-function deleteItemFromDb(PDO $db, array $dreams): bool {
+function deleteItemFromDb(PDO $db, array $dreams): string {
     $dreamIdsArray = array_keys($dreams);
-    $numberOfQuestionMarks = sizeof($dreamIdsArray);
+    $numberOfAdditionalQuestionMarks = sizeof($dreamIdsArray)-1;
     $questionMarksString = "?";
-    $questionMarksString .= str_repeat(", ?", $numberOfQuestionMarks-1);
+    $questionMarksString .= str_repeat(", ?", $numberOfAdditionalQuestionMarks);
     $query = $db->prepare("DELETE FROM dreams WHERE id IN ($questionMarksString);");
     $query->execute($dreamIdsArray);
     return "<p>Your dreams have been removed from the database!</p>";
