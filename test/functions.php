@@ -33,6 +33,7 @@ class functions extends TestCase
         $this->assertEquals($expectedOutput,$actualOutput);
     }
 
+
 public function testFailureIncorrectArrayKeys() 
     {
         $array = [
@@ -41,6 +42,54 @@ public function testFailureIncorrectArrayKeys()
         ];
         $this->expectException(Exception::class);
         displayDreamDetails($array);
+    }
+
+
+public function testSuccessDisplayDreamDetailsDelete ()
+{
+    $array = [
+        [
+            'dream_title'=>'Finding nemo',
+            'dream_date'=>'2023-01-01',
+            'id'=>'1',
+            'dream_description'=>'Finding the little fish!',
+            'dream_or_nightmare'=>'Nightmare'
+
+        ],
+        [
+            'dream_title'=>'Forrest Gump',
+            'dream_date'=>'1990-01-01',
+            'id'=>'2',
+            'dream_description'=>'Run Forrest Run!',
+            'dream_or_nightmare'=>'Dream'
+        ]
+    ];
+    $expectedOutput = "<div class=\"box-div\">"
+    . "<h3>Forrest Gump</h3>"
+    . "<p>1990-01-01</p>"
+    . "<div>"
+    . "<label for=\"2\">Delete?</label>"
+    . "<input type=\"checkbox\" id=\"2\" name=\"2\">"
+    . "</div></div>"
+    ."<div class=\"box-div\">"
+    . "<h3>Finding nemo</h3>"
+    . "<p>2023-01-01</p>"
+    . "<div>"
+    . "<label for=\"1\">Delete?</label>"
+    . "<input type=\"checkbox\" id=\"1\" name=\"1\">"
+    . "</div></div>";
+    $actualOutput = displayDreamsForDelete($array);
+    $this->assertEquals($expectedOutput,$actualOutput);
+}
+
+public function testFailureDisplayDreamsForDelete() 
+    {
+        $array = [
+            ['jacket_potato'=>'yummy'], 
+            ['lasagne'=>'yummier']
+        ];
+        $this->expectException(Exception::class);
+        displayDreamsForDelete($array);
     }
 }
 
