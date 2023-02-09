@@ -9,17 +9,6 @@ try {
 } catch (Exception $exception) {
     error_log($exception->getMessage(), 3, 'serverlog.log');
 }
-
-try {
-    $badArray = [
-        ['jacket_potato'=>'yummy'], 
-        ['lasagne'=>'yummier']
-    ];
-    displayDreamDetails($badArray);
-} catch (Exception $exception) {
-    error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
-}
-
 ?>
 
 <!DOCTYPE html>
