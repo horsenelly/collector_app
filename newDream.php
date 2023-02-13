@@ -27,8 +27,12 @@ if (
     }
     
     if($validatedDream) {
-        addItemToDb($db, $validatedDream);
-        header('Location: addDreamSuccessMessage.php');
+        try {
+            addItemToDb($db, $validatedDream);
+            header('Location: addDreamSuccessMessage.php');
+        } catch (Exception $exception) {
+            error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
+        }
     }
    
 }
