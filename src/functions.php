@@ -22,6 +22,56 @@ function displayDreamDetails(array $dreams): string {
     return $dreamOutput;    
 }
 
+function santitizeDreamInput(array $newDream): array {
+
+    $dreamTitle = $newDream['dream_title'];
+    $dreamType = $newDream['dream_or_nightmare'];
+    $dreamDescription = $newDream['dream_description'];
+    $dreamDateTotal = $newDream['dream_date'];
+
+    $sanitizedDreamTitle = trim($dreamTitle);
+    $sanitizedDreamDescription = trim($dreamDescription);
+    $sanitizedDateTotal = filter_var($dreamDateTotal, FILTER_SANITIZE_NUMBER_INT);
+    
+    $returnArray = [
+        'dream_title' => $sanitizedDreamTitle,
+        'dream_or_nightmare' => $dreamType,
+        'dream_description' => $sanitizedDreamDescription,
+        'dream_date' => $sanitizedDateTotal
+    ];
+
+    return $returnArray;
+}
+
+function validateDreamInput(array $newSanitizedDream): array {
+    
+    $dreamTitle = $newSanitizedDream['dream_title'];
+    $dreamType = $newSanitizedDream['dream_or_nightmare'];
+    $dreamDescription = $newSanitizedDream['dream_description'];
+    $dreamDateTotal = $newSanitizedDream['dream_date'];
+
+    $dreamYear = substr($dreamDateTotal,0,4); 
+    $dreamMonth = substr($dreamDateTotal,5,2); 
+    $dreamDay = substr($dreamDateTotal,8,2);
+
+    $validateDreamTypeArray = ['Dream', 'Nightmare', 'Dream/Nightmare'];
+    $validatedDreamOrNightmare = in_array($dreamType, $validateDreamTypeArray);
+    $validateDreamDate = checkdate($dreamMonth, $dreamDay, $dreamYear);
+    
+
+    if ($validatedDreamOrNightmare && $validatedDreamOrNightmare && $dreamYear <= date("Y")) {
+        $returnArray = [
+            'dream_title' => $dreamTitle,
+            'dream_or_nightmare' => $dreamType,
+            'dream_description' => $dreamDescription,
+            'dream_date' => $dreamDateTotal
+        ];
+        return $returnArray;
+    } else {
+        throw new Exception ('Validation failure - invalid data used');
+    }
+}
+
 function displayDreamsForDelete(array $dreams): string {
     $dreamOutput ='';
     $dreamsReversedChronologically = array_reverse($dreams);

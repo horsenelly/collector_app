@@ -7,7 +7,7 @@ $dreams = getAllDreams($db);
 try {
     $displayedDreams = displayDreamDetails($dreams);
 } catch (Exception $exception) {
-    error_log($exception->getMessage()."\n", 3, 'serverlog.log');
+    error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
 }
 ?>
 

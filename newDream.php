@@ -4,6 +4,8 @@ $newDream = [];
 require 'src/functions.php';
 require 'src/db.php';
 
+$validatedDream = '';
+
 if (
     isset($_POST['dream_title'])
     && isset($_POST['dream_or_nightmare'])
@@ -17,8 +19,18 @@ if (
         'dream_date' => $_POST['dream_date'],
     ];
     $db = connectToDB('dreams');
-    addItemToDb($db, $newDream);
-    header('Location: addDreamSuccessMessage.php');
+    $sanitizedDream = santitizeDreamInput($newDream);
+    try {
+        $validatedDream = validateDreamInput($sanitizedDream);
+    } catch (Exception $exception) {
+        error_log($exception->getMessage() . "\n", 3, 'serverlog.log' );
+    }
+    
+    if($validatedDream) {
+        addItemToDb($db, $validatedDream);
+        header('Location: addDreamSuccessMessage.php');
+    }
+   
 }
 ?>
 
