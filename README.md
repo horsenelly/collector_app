@@ -1,3 +1,14 @@
-# collector_app
+#Dream Collector App
 
-This is an app that I am writing that will store a collection of dreams!
+##Setup instructions
+
+This project runs on the ioAcademy docker infrastructure (see the [docker-image repository](https://github.com/iO-Academy/docker-image/)
+
+
+1. Create a new database called `dreams`
+2. Import `dreams.sql` into the `dreams` database
+
+## Unit testing
+
+To run unit tests in this project, run `phpunit . ` from the project test directory
+
