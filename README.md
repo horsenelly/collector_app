@@ -10,5 +10,5 @@ This project runs on the ioAcademy docker infrastructure (see the [docker-image 
 
 ## Unit testing
 
-To run unit tests in this project, run `phpunit . ` from the project test directory
+To run unit tests in this project, run `phpunit functions.php ` from the project test directory
 
