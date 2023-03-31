@@ -1,6 +1,6 @@
-#Dream Collector App
+# Dream Collector App
 
-##Setup instructions
+## Setup instructions
 
 This project runs on the ioAcademy docker infrastructure (see the [docker-image repository](https://github.com/iO-Academy/docker-image/)
 
