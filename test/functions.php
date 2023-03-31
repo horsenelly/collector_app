@@ -1,5 +1,5 @@
 <?php
-require 'src/functions.php';
+require '../src/functions.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -64,6 +64,7 @@ public function testSuccessDisplayDreamDetailsDelete ()
             'dream_or_nightmare'=>'Dream'
         ]
     ];
+    
     $expectedOutput = "<div class=\"box-div\">"
     . "<h3>Forrest Gump</h3>"
     . "<p>1990-01-01</p>"
